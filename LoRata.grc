@@ -1,0 +1,328 @@
+options:
+  parameters:
+    author: duong
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: LoRata
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: SNR_dB
+  id: variable
+  parameters:
+    comment: ''
+    value: '-5'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 96.0]
+    rotation: 0
+    state: enabled
+- name: bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '125000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [152, 80.0]
+    rotation: 0
+    state: enabled
+- name: clc_offset
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 96.0]
+    rotation: 0
+    state: enabled
+- name: cr
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [384, 16.0]
+    rotation: 0
+    state: enabled
+- name: has_crc
+  id: variable
+  parameters:
+    comment: ''
+    value: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 24.0]
+    rotation: 0
+    state: enabled
+- name: impl_head
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [288, 8.0]
+    rotation: 0
+    state: enabled
+- name: pay_len
+  id: variable
+  parameters:
+    comment: ''
+    value: '255'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 24.0]
+    rotation: 0
+    state: enabled
+- name: pream_len
+  id: variable
+  parameters:
+    comment: ''
+    value: '8'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [752, 48.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '500000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: sf
+  id: variable
+  parameters:
+    comment: ''
+    value: '7'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 88.0]
+    rotation: 0
+    state: enabled
+- name: soft_decoding
+  id: variable
+  parameters:
+    comment: ''
+    value: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 32.0]
+    rotation: 0
+    state: enabled
+- name: syn_word
+  id: variable
+  parameters:
+    comment: ''
+    value: '18'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 88.0]
+    rotation: 0
+    state: enabled
+- name: variable_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 48.0]
+    rotation: 0
+    state: enabled
+- name: blocks_message_strobe_0
+  id: blocks_message_strobe
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg: 'pmt.intern("Hello cua: 0")'
+    period: '2000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [64, 240.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 240.0]
+    rotation: 0
+    state: enabled
+- name: channels_channel_model_0
+  id: channels_channel_model
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: ''
+    epsilon: '1.0'
+    freq_offset: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: '1.77'
+    seed: '0'
+    taps: '1.0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 208.0]
+    rotation: 0
+    state: enabled
+- name: lora_rx_0
+  id: lora_rx
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: '125000'
+    comment: ''
+    cr: '1'
+    has_crc: 'True'
+    impl_head: 'False'
+    ldro: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pay_len: '255'
+    print_rx: '[True,True]'
+    samp_rate: '500000'
+    sf: '7'
+    soft_decoding: 'True'
+    sync_word: '[0x12]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 196.0]
+    rotation: 0
+    state: enabled
+- name: lora_sdr_payload_id_inc_0
+  id: lora_sdr_payload_id_inc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    separator: ':'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [72, 176.0]
+    rotation: 180
+    state: enabled
+- name: lora_tx_0
+  id: lora_tx
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: '125000'
+    comment: ''
+    cr: '3'
+    frame_zero_padd: '1280'
+    has_crc: 'True'
+    impl_head: 'False'
+    ldro: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: '500000'
+    sf: '7'
+    sync_word: '[0x12]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 196.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_message_strobe_0, strobe, lora_sdr_payload_id_inc_0, msg_in]
+- [blocks_message_strobe_0, strobe, lora_tx_0, in]
+- [blocks_throttle2_0, '0', channels_channel_model_0, '0']
+- [channels_channel_model_0, '0', lora_rx_0, '0']
+- [lora_sdr_payload_id_inc_0, msg_out, blocks_message_strobe_0, set_msg]
+- [lora_tx_0, '0', blocks_throttle2_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2
